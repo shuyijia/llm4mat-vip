@@ -57,6 +57,11 @@ Go to https://github.com/pytorch/torchtune/tree/main/recipes/configs and choose 
 
 Single device here means training on a single GPU.
 
+Look at the first few lines of your chosen yaml file, there should be a command on downloading that specific LLM weights. E.g.:
+```
+tune download meta-llama/Meta-Llama-3.1-8B-Instruct --output-dir [OUTPUT/DIR/TO/SAVE/THE/WEIGHTS] --ignore-patterns "original/consolidated.00.pth" --hf-token [YOUR/HUGGINGFACE/TOKEN]
+```
+
 ## Fine-tuning
 To fine-tune on an interactive node, do
 ```

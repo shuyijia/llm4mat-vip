@@ -27,6 +27,9 @@ module load anaconda3
 # create environment
 conda create -n llmft python=3.11
 
+# activate the environment
+conda activate llmft
+
 # install torch
 pip install torch torchvision torchao
 

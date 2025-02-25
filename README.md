@@ -6,9 +6,10 @@ This package has been tested with the torchtune package at the specific commit i
 7b654ea00980778bc17773c7b1ab29af34d9af2b
 ```
 
-In general, the latest main branch of torchtune should still be compatible. However, if you encounter any compatibility issues, try installing the version referenced above using the provided commit SHA:
+In general, the latest main branch of torchtune should still be compatible. Thus, it is recommended to first follow the installation guide below. If you encounter any compatibility issues, try installing the version referenced above using the provided commit SHA:
 
 ```
+# try the installation guide below before doing this
 git clone https://github.com/pytorch/torchtune.git
 cd torchtune
 git checkout 7b654ea00980778bc17773c7b1ab29af34d9af2b
@@ -76,3 +77,10 @@ To cancel a job, do
 scancel [JOBID]
 ```
 The job ID can be found by doing the `squeue --user [YOUR/GT/USERNAME]` command.
+
+## Inference
+To do inference, edit the inference yaml files with your saved checkpoint paths and do
+```
+tune run llm4materials/inference/infer.py --config [PATH/TO/YOUR/INFER/YAML/FILE]
+```
+Sample checkpoints have been provided in the current `configs/llama2-7b-inference.yaml` and `configs/llama3-8b-inference.yaml` files. You should be able to run them out of the box. 

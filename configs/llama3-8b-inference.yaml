@@ -10,7 +10,7 @@ conditional: False
 
 checkpointer:
   _component_: torchtune.training.FullModelHFCheckpointer
-  checkpoint_dir: outputs/sample-llama3-ft/epoch_0/
+  checkpoint_dir: /storage/ice-shared/vip-vxp/Shared/llm4mat-ft-weights/llama3-epoch7/
   checkpoint_files: [
     model-00001-of-00004.safetensors,
     model-00002-of-00004.safetensors,
@@ -28,7 +28,7 @@ seed:
 # Tokenizer arguments
 tokenizer:
   _component_: torchtune.models.llama3.llama3_tokenizer
-  path: /storage/ice1/5/5/sjia65/Meta-Llama-3.1-8B-Instruct/original/tokenizer.model
+  path: /storage/ice-shared/vip-vxp/Shared/llm4mat-ft-weights/llama3-epoch7/tokenizer.model
   max_seq_len: null
   prompt_template: null
 
@@ -37,7 +37,7 @@ prompt:
   system: null
   user: null
 max_new_tokens: 300
-temperature: 0.8 # 0.8 and 0.6 are popular values to try
+temperature: 0.6 # 0.8 and 0.6 are popular values to try
 top_k: 300
 
 enable_kv_cache: True

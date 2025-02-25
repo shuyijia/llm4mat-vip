@@ -1,5 +1,20 @@
 # LLM 4 Materials for VIP @ GT
 
+This package has been tested with the torchtune package at the specific commit identified by the following SHA (24 Feb 2025):
+
+```
+7b654ea00980778bc17773c7b1ab29af34d9af2b
+```
+
+In general, the latest main branch of torchtune should still be compatible. However, if you encounter any compatibility issues, try installing the version referenced above using the provided commit SHA:
+
+```
+git clone https://github.com/pytorch/torchtune.git
+cd torchtune
+git checkout 7b654ea00980778bc17773c7b1ab29af34d9af2b
+pip install -e .
+```
+
 ## Installation
 ```
 # 1. request a GPU on ICE

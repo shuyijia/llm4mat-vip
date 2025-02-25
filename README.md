@@ -53,3 +53,8 @@ To view the progress of the submitted job, do
 ```
 squeue --user [YOUR/GT/USERNAME]
 ```
+To cancel a job, do
+```
+scancel [JOBID]
+```
+The job ID can be found by doing the `squeue --user [YOUR/GT/USERNAME]` command.

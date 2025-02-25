@@ -180,3 +180,5 @@ data/mp_20/raw_val/
 
 # outputs
 outputs/
+
+*.out

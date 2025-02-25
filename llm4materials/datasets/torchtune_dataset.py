@@ -10,7 +10,7 @@ from datasets import load_dataset
 from torch.utils.data import Dataset
 from torchtune.data._utils import truncate
 from torchtune.datasets._packed import PackedDataset
-from torchtune.modules.tokenizers import ModelTokenizer
+from torchtune.modules.transforms.tokenizers import ModelTokenizer
 
 from pathlib import Path
 from glob import glob 
@@ -82,7 +82,11 @@ class TextCompletionDataset(Dataset):
         
         # if conditional we need to load the properties as well
         # load the properties
-        df = pd.read_csv("targets.csv", header=None, names=["structure_id", "eform", "bandgap", "ehull"])
+        df = pd.read_csv(
+            source + "/targets.csv",
+            header=None, 
+            names=["structure_id", "eform", "bandgap", "ehull"]
+        )
         eform_dict = dict(zip(df["structure_id"], df["eform"]))
         bandgap_dict = dict(zip(df["structure_id"], df["bandgap"]))
 
@@ -235,3 +239,7 @@ if __name__ == "__main__":
     )
 
     print(ds[0])
+
+    decoded = tokenizer.decode(ds[0]['tokens'])
+    print(decoded)
+    

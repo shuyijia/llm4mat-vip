@@ -16,7 +16,7 @@
 # This config works only for training on single device.
 
 
-output_dir: outputs/testrun
+output_dir: outputs/sample-llama3-ft
 
 # Model Arguments
 model:
@@ -52,7 +52,7 @@ save_adapter_weights_only: False
 # Dataset and Sampler
 dataset:
   _component_: llm4materials.datasets.torchtune_dataset.text_completion_dataset
-  source: data/mp_20/raw_val
+  source: data/mp_20/raw_train
   conditional: False
   max_seq_len: 1024
   packed: False
@@ -74,7 +74,7 @@ loss:
   _component_: torchtune.modules.loss.CEWithChunkedOutputLoss
 
 # Training
-epochs: 1
+epochs: 10
 max_steps_per_epoch: null
 gradient_accumulation_steps: 8  # Use to increase effective batch size
 clip_grad_norm: null
